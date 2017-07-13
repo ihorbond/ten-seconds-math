@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/custom.min.css">
+</head>
+
+<body>
+
+  <div class="game-container">
+    <h1> 10 SECONDS MATH </h1>
+    <h3>Enter Numbers Limit:
+      <br><br>
+    <input id="limit" type='number' value="10" min="0">
+     </h3>
+    <canvas id="timer"> </canvas>
+    <br>
+
+    <div id="controls">
+      <h2> Operations </h2>
+      <label for='addition'>
+      <div class='checkbox'>
+        <input id="addition" type="checkbox" name="addition" value="">
+        <img src="images/add.jpg">
+      </div>
+    </label>
+      <label for="substraction">
+      <div class='checkbox'>
+        <input id="substraction" type="checkbox" name="substraction" value="">
+        <img src="images/substract.jpg">
+      </div>
+    </label>
+      <br>
+      <label for="multiplication">
+      <div class='checkbox'>
+        <input id="multiplication" type="checkbox" name="multiplication" value="">
+        <img src="images/multiply.jpg">
+      </div>
+    </label>
+      <label for="division">
+      <div class='checkbox'>
+        <input id="division" type="checkbox" name="division" value="">
+        <img src="images/divide.jpg">
+      </div>
+    </label>
+      <br>
+      <button id="start-game">I'm ready!</button>
+      <br>
+    </div>
+
+    <span id="question" class="hidden"> </span>
+    <button id="restart" class="hidden">Restart</button>
+    <br>
+    <input type="text" id='answer' class="answer" onchange="checkAnswer" maxlength="3" placeholder="Answer">
+    <br>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.4/lodash.js"></script>
+  <script type="text/javascript" src="js/application.js"></script>
+
+</body>
+
+</html>
