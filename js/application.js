@@ -1,6 +1,8 @@
 const audio = new Audio();
 audio.src = "./audios/cash-register.mp3";
 let correctAnswer;
+let correctAnswerCount = 0;
+let wrongAnswerCount = 0;
 let timer = 10;
 let score = 0;
 let timeLeft = 1.5; //angle for around timer circle
@@ -22,6 +24,7 @@ document.getElementById('restart').onclick = () => {
 };
 
 function draw() {
+  //position timer within the cirlce
   let dx = 25;
   const dy = 15;
   if (timer < 10) {
@@ -101,7 +104,8 @@ function startNewGame() {
 }
 
 function gameOver() {
-  q.innerText = `Your Score: ${score}`;
+  q.innerHTML = `Your Score: ${score} <br> <span class="correct">C</span>/<span class="wrong">R</span>:
+                <span class="correct">${correctAnswerCount}</span>/<span class="wrong">${wrongAnswerCount}<span>`;
   document.getElementById('restart').classList.remove('hidden');
   a.classList.add("hidden");
 }
@@ -119,16 +123,17 @@ function selectedOperations() {
 function checkAnswer() {
   // console.log(correctAnswer);
   if (timer > 0 && correctAnswer === parseInt(a.value)) {
-    // console.log('timer: ' + timer);
     audio.play();
     a.value = '';
     a.classList.remove("glowRed");
     timer += 1;
     score += 10;
     timeLeft += 0.2;
+    correctAnswerCount++;
     startNewGame();
   } else {
     a.classList.add("glowRed");
     a.value = '';
+    wrongAnswerCount++;
   }
 }
