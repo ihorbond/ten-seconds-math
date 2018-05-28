@@ -104,7 +104,7 @@ function startNewGame() {
 }
 
 function gameOver() {
-  q.innerHTML = `Your Score: ${score} <br> <span class="correct">C</span>/<span class="wrong">R</span>:
+  q.innerHTML = `Your Score: ${score} <br> <span class="correct">C</span>/<span class="wrong">W</span>:
                 <span class="correct">${correctAnswerCount}</span>/<span class="wrong">${wrongAnswerCount}<span>`;
   document.getElementById('restart').classList.remove('hidden');
   a.classList.add("hidden");
